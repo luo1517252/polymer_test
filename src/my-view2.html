@@ -1,0 +1,45 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="custom-elements/data-bind.html">
+
+<dom-module id="my-view2">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <div class="card">
+
+      <h1>个人信息编辑</h1><div class="row input-row">
+      <p><input type="text" id="name" name="name" pattern=".{5,}" value=[[user.name]]></p></div>
+      <p><input type="text" id="age" name="age" pattern=".{5,}" placeholder="请输入您的年龄"></p>
+      <p><input type="email" id="accountEmail" name="accountEmail" placeholder="请输入您的Email地址"></p>
+      <p><input type="tel" id="accountPhone" name="accountPhone" pattern="\d{10,}" placeholder="请输入您的手机号码"></p>
+      <p><input type="text" id="shipAddress" name="shipAddress" pattern=".{5,}" placeholder="请输入您的收货地址"></p>
+      <button onsubmit="tijiao">提交修改</button>
+    </div>
+  </template>
+
+  <script>
+
+    class MyView2 extends Polymer.Element {
+      static get is() { return 'my-view2'; }
+    }
+
+    window.customElements.define(MyView2.is, MyView2);
+  </script>
+</dom-module>

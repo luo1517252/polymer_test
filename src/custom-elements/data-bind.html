@@ -1,0 +1,45 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="data-bind">
+    <template>
+        <style>
+            :host{
+                display: block;
+            }
+        </style>
+        <div>
+            <span>昵称:[[user.name]]</span><br />
+            <span>年龄:[[user.age]]</span><br />
+            <span>E-mail:[[user.email]]</span><br />
+            <span>电话:[[user.tel]]</span><br />
+            <span>收货地址:[[user.add]]</span>
+        </div>
+    </template>
+
+    <script>
+        /**
+         * @DataBind
+         * @polymer
+         */
+        class DataBind extends Polymer.Element {
+            static get is() { return 'data-bind'; }
+            static get properties(){
+                return {
+                    user:{
+                        type: Object,
+                        value:{
+                            name:"我爱java",
+                            age:25,
+                            email:"1234567@163.com",
+                            tel:"12345678978",
+                            add:"武汉市硚口区越秀财富中心Today"
+
+                        }
+                    }
+                }
+            }
+        }
+        window.customElements.define(DataBind.is, DataBind);
+
+    </script>
+</dom-module>

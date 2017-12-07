@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="user-list">
+    <template>
+        <style>
+            :host{
+                display: block;
+            }
+        </style>
+        <div>
+            <span>[[list.id]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><tr />
+            <span>[[list.money]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><tr />
+            <span>[[list.date]]</span><tr />
+
+        </div>
+    </template>
+
+    <script>
+        /**
+         * @UserList
+         * @polymer
+         */
+        class UserList extends Polymer.Element {
+            static get is() { return 'user-list'; }
+            static get properties(){
+                return {
+                    list:{
+                        type: Object,
+                        value:{
+                            id:"123456",
+                            money:"96.8",
+                            date:"2017-5-6",
+
+
+                        }
+                    }
+                }
+            }
+        }
+        window.customElements.define(UserList.is, UserList);
+
+    </script>
+</dom-module>
